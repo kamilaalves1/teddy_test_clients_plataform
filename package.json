@@ -6,8 +6,12 @@
   "scripts": {
     "dev:web": "npx vite front-end --config front-end/vite.config.mts",
     "build:web": "npx vite build front-end --config front-end/vite.config.mts",
+    "lint:web": "npx eslint front-end/src --ext .ts,.tsx",
+    "typecheck:web": "npx tsc -p front-end/tsconfig.json --noEmit",
     "test:web": "npx vitest run --config front-end/vite.config.mts",
     "test:web:coverage": "npx vitest run --config front-end/vite.config.mts --coverage",
+    "lint:api": "npx eslint back-end/src --ext .ts",
+    "typecheck:api": "npx tsc -p back-end/tsconfig.app.json --noEmit",
     "build:api": "npx tsc -p back-end/tsconfig.app.json",
     "migration:run": "npm run build:api && npx typeorm -d back-end/dist/back-end/migrations/data-source.js migration:run",
     "migration:revert": "npm run build:api && npx typeorm -d back-end/dist/back-end/migrations/data-source.js migration:revert",

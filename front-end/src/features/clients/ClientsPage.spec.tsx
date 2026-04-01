@@ -38,16 +38,16 @@ describe('ClientsPage', () => {
     const onCreateClient = vi.fn();
     renderPage({ onCreateClient });
 
-    fireEvent.click(screen.getByRole('button', { name: 'Criar cliente' }));
+    fireEvent.click(screen.getAllByRole('button', { name: 'Criar cliente' })[0]);
     fireEvent.change(screen.getByLabelText('Nome'), { target: { value: '  clínica vértice  ' } });
     fireEvent.change(screen.getByLabelText('Salário'), { target: { value: '350000' } });
     fireEvent.change(screen.getByLabelText('Valor da empresa'), { target: { value: '12000000' } });
-    fireEvent.click(screen.getByRole('button', { name: 'Criar cliente' }));
+    fireEvent.click(screen.getAllByRole('button', { name: 'Criar cliente' })[1]);
 
     expect(onCreateClient).not.toHaveBeenCalled();
     await waitFor(() => {
       expect(screen.getByText('Já existe um cliente cadastrado com esse nome.')).toBeTruthy();
-      expect(screen.getByRole('status')).toHaveTextContent(
+      expect(screen.getByRole('status').textContent).toContain(
         'O cliente Clínica Vértice já está cadastrado.',
       );
     });
@@ -59,16 +59,16 @@ describe('ClientsPage', () => {
       .mockRejectedValue(new Error('Já existe um cliente cadastrado com o nome "Nova Clínica".'));
     renderPage({ clients: [], onCreateClient });
 
-    fireEvent.click(screen.getByRole('button', { name: 'Criar cliente' }));
+    fireEvent.click(screen.getAllByRole('button', { name: 'Criar cliente' })[0]);
     fireEvent.change(screen.getByLabelText('Nome'), { target: { value: 'Nova Clínica' } });
     fireEvent.change(screen.getByLabelText('Salário'), { target: { value: '350000' } });
     fireEvent.change(screen.getByLabelText('Valor da empresa'), { target: { value: '12000000' } });
-    fireEvent.click(screen.getByRole('button', { name: 'Criar cliente' }));
+    fireEvent.click(screen.getAllByRole('button', { name: 'Criar cliente' })[1]);
 
     await waitFor(() => {
       expect(onCreateClient).toHaveBeenCalledTimes(1);
       expect(screen.getByText('Já existe um cliente cadastrado com esse nome.')).toBeTruthy();
-      expect(screen.getByRole('status')).toHaveTextContent(
+      expect(screen.getByRole('status').textContent).toContain(
         'Não foi possível criar o cliente porque esse nome já existe.',
       );
     });
