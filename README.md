@@ -89,10 +89,13 @@ implementação acadêmica de SOLID.
 
 ## Arquitetura AWS
 
-Os diagramas em
-[docs/arquitetrua_teddy_kamila.png](./docs/arquitetrua_teddy_kamila.png) e
-[docs/diagrama_sequencia_teddy_kamila.png](./docs/diagrama_sequencia_teddy_kamila.png)
-representam uma proposta de implantação pensada para o desafio.
+Os diagramas abaixo:
+
+![Arquitetura AWS](./docs/diagrama_sequencia_teddy_kamila.png)
+
+![Arquitetura AWS](./docs/arquitetrua_teddy_kamila.png)
+
+proposta de implantação pensada para o desafio.
 
 ### Decisões principais da proposta
 
