@@ -1,0 +1,28 @@
+{
+  "name": "back-end",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "back-end/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx tsc -p back-end/tsconfig.app.json"
+      }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "node -r ./back-end/dist/back-end/src/telemetry.js back-end/dist/back-end/src/main.js"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx jest --config back-end/jest.config.cts --runInBand"
+      }
+    }
+  }
+}

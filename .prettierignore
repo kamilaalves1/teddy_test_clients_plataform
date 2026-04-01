@@ -1,0 +1,14 @@
+# Add files here to ignore them from prettier formatting
+/dist
+/coverage
+/.nx/cache
+/.nx/workspace-data
+node_modules
+out-tsc
+front-end/dist
+back-end/dist
+e2e/playwright-report
+test-results
+package-lock.json
+*.min.js
+*.min.css
