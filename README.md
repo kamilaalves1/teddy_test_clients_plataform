@@ -105,9 +105,6 @@ proposta de implantação pensada para o desafio.
 - Banco em PostgreSQL gerenciado.
 - Observabilidade integrada ao ambiente de execução.
 
-Esses diagramas continuam úteis como referência de desenho de solução, mas o
-código atual do repositório reflete a execução local descrita neste README e no
-documento [docs/arquitetura-atual.md](./docs/arquitetura-atual.md).
 
 ## Pré-requisitos
 
