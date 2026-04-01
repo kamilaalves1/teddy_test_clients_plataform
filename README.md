@@ -81,7 +81,7 @@ Há aplicação parcial de princípios de SOLID, principalmente:
 - **Open/Closed Principle** em nível moderado: novos módulos e endpoints podem
   ser adicionados sem reestruturar a base inteira.
 
-Ao mesmo tempo, é importante não exagerar na descrição: o projeto **não** isola
+Ao mesmo tempo, é importante não exagerar na consideração de SOLID: o projeto **não** isola
 completamente domínio de infraestrutura. Os services ainda dependem diretamente
 de recursos como repositories do TypeORM e serviços de observabilidade, então o
 desenho está mais próximo de uma arquitetura pragmática para MVP do que de uma
