@@ -24,6 +24,7 @@
     "lint": "npx nx run-many --target=lint --all",
     "format": "npx prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\" --ignore-path .prettierignore",
     "format:check": "npx prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\" --ignore-path .prettierignore",
+    "postinstall": "patch-package",
     "prepare": "husky"
   },
   "lint-staged": {
@@ -53,6 +54,7 @@
     "@nx/vitest": "22.6.3",
     "@nx/webpack": "22.6.3",
     "@playwright/test": "^1.58.2",
+    "@rollup/wasm-node": "4.60.1",
     "@testing-library/dom": "10.4.0",
     "@testing-library/react": "16.3.0",
     "@types/jest": "^30.0.0",
@@ -70,6 +72,7 @@
     "jsdom": "~22.1.0",
     "lint-staged": "^16.4.0",
     "nx": "22.6.3",
+    "patch-package": "^8.0.1",
     "prettier": "~3.6.2",
     "ts-jest": "^29.4.0",
     "tslib": "^2.3.0",
